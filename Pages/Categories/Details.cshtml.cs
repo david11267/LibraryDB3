@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using LibraryDB3.Model;
 
-namespace LibraryDB3.Pages.Authors
+namespace LibraryDB3.Pages.Categories
 {
     public class DetailsModel : PageModel
     {
@@ -19,8 +19,8 @@ namespace LibraryDB3.Pages.Authors
             _context = context;
         }
 
-        public Author Author { get; set; }
-        public Book Books { get; set; }
+        public Category Category { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -28,10 +28,10 @@ namespace LibraryDB3.Pages.Authors
                 return NotFound();
             }
 
-            Author = await _context.Authors.
-                Include(x => x.Books).FirstOrDefaultAsync(m => m.Id == id);
+            Category = await _context.Categories
+                .Include(c => c.Book).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Author == null)
+            if (Category == null)
             {
                 return NotFound();
             }

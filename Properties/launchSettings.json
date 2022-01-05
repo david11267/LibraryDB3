@@ -1,21 +1,22 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:40795",
+      "applicationUrl": "http://localhost:40795/",
       "sslPort": 44361
     }
   },
   "profiles": {
     "LibraryDB3": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7184;http://localhost:5184",
+      "launchUrl": "./Books",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:7184;http://localhost:5184",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
