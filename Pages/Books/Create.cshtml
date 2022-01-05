@@ -1,0 +1,58 @@
+﻿@page
+@model LibraryDB3.Pages.Books.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Book.AuthorId" class="control-label"></label>
+                <select asp-for="Book.AuthorId" class ="form-control" asp-items="ViewBag.AuthorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Title" class="control-label"></label>
+                <input asp-for="Book.Title" class="form-control" />
+                <span asp-validation-for="Book.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Genre" class="control-label"></label>
+                <input asp-for="Book.Genre" class="form-control" />
+                <span asp-validation-for="Book.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Bought" class="control-label"></label>
+                <input asp-for="Book.Bought" class="form-control" />
+                <span asp-validation-for="Book.Bought" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.ReturnDate" class="control-label"></label>
+                <input asp-for="Book.ReturnDate" class="form-control" />
+                <span asp-validation-for="Book.ReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.BookCost" class="control-label"></label>
+                <input asp-for="Book.BookCost" class="form-control" />
+                <span asp-validation-for="Book.BookCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
